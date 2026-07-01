@@ -1,30 +1,35 @@
 public class ClinicoGeral extends Profissional {
     
+    private String instituicaoFormadora;
+
     //Construtor Mínimo
-    public ClinicoGeral(String nome, String especialidade) {
-        super(nome, especialidade);
+    public ClinicoGeral(String nome) {
+        super(nome, "Clínico geral");
     }
 
     //Construtor Intermediário
-    public ClinicoGeral(String nome, String especialidade, String registro, double valorConsulta) {
-        super(nome, especialidade, registro, valorConsulta);
+    public ClinicoGeral(String nome, String registro, double valorConsulta) {
+        super(nome, "Clínico geral", registro, valorConsulta);
     }
 
     //Construtor Completo
-    public ClinicoGeral(String nome, String especialidade, String registro, double valorConsulta, String[] diasDisponiveis, int totalDias) {
-        super(nome, especialidade, registro, valorConsulta, diasDisponiveis, totalDias);
+    public ClinicoGeral(String nome, String registro, double valorConsulta, String[] diasDisponiveis, int totalDias) {
+        super(nome, "Clínico geral", registro, valorConsulta, diasDisponiveis, totalDias);
     }
 
     // Implementação dos métodos abstratos
     @Override
-    public void registrarEspecifico() {
-        System.out.println("Registrando sessão de fisioterapia: Avaliação motora e tratamento.");
+    public String registrarEspecifico(Atendimento atendimento) {
+        return "Registrando sessão de fisioterapia: Avaliação motora e tratamento.";
     }
 
     @Override
     public String exibirResumo() {
         return "Fisioterapeuta: " + getNome() + " | Registro: " + getRegistro();
     }
+
+    public String getInstituicaoFormadora() { return instituicaoFormadora; }
+    public void setInstituicaoFormadora(String instituto) { this.instituicaoFormadora = instituto; }
 
 }
 

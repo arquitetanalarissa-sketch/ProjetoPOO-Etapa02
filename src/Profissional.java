@@ -66,6 +66,6 @@ public abstract class Profissional extends Pessoa {
 
     //método a ser implementado específico por especialidade
 
-    public abstract void registrarEspecifico();
+    public abstract String registrarEspecifico(Atendimento atendimento);
 
 }
